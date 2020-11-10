@@ -16,11 +16,11 @@ jobs:
       - run:
           name: Run Unit test
           command: |
-           pip install virtualenv
-           virtualenv DevOps
-           python -m venv DevOps
-           python server.py
-           python api_test.py --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
+           #pip install virtualenv
+           #virtualenv DevOps
+           #python -m venv DevOps
+           sudo python server.py
+           sudo python api_test.py --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
       - store_test_results:
           path: test-reports 
       - store_artifacts:
