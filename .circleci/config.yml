@@ -8,14 +8,14 @@ jobs:
       - run:
           name: Installing python dependencies 
           command: |
-            echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
+            #echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             pip install --user --upgrade pip
             pip install --user -r requirements.txt 
             
       - run:
           name: Run Unit test
           command: |
-            pytest --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
+            python api_test --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
       - store_test_results:
           path: test-reports 
       - store_artifacts:
