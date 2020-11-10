@@ -6,7 +6,7 @@ import json
 import pytest
 
 app = Flask(__name__)
-app.config.from_object("config.TestingConfig")
+app.config.from_object("configuration.TestingConfig")
 
 Swagger(app) 
 
