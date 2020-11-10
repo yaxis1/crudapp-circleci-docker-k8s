@@ -11,7 +11,7 @@ jobs:
             #echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             pip install --user --upgrade pip
             pip install --user pytest
-            pip install --user Flask
+            pip install -user U Flask
             pip install --user -r requirements.txt 
             
       - run:
