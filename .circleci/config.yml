@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  run_tests:
+  Setup:
     docker:
       - image: circleci/python:3.7.4
     steps:
@@ -11,9 +11,10 @@ jobs:
             #echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             pip install --user --upgrade pip
             pip install --user -r requirements.txt 
-            
+  Tests:
+    steps:       
       - run:
-          name: Run Unit test
+          name: Running Unit_test
           command: |
             python api_test.py --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
       - store_test_results:
