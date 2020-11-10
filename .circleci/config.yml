@@ -16,7 +16,8 @@ jobs:
       - run:
           name: Run Unit test
           command: |
-           python -m venv tutorial-env
+           python -m venv DevOps
+           cd DevOps\Scripts\activate
            sudo python server.py
            sudo python api_test.py --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
       - store_test_results:
