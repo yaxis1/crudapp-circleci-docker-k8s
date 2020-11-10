@@ -3,7 +3,7 @@ from bson.objectid import ObjectId
 from flasgger import Swagger 
 import pymongo
 import json
-#import pytest
+import pytest
 
 app = Flask(__name__)
 app.config.from_object("configuration.TestingConfig")
