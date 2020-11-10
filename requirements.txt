@@ -2,6 +2,7 @@ appdirs==1.4.4
 astroid==2.4.2
 autopep8==1.5.4
 bson==0.5.10
+flask
 chardet==3.0.4
 distlib==0.3.1
 filelock==3.0.12
