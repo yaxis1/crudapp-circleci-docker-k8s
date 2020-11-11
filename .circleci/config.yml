@@ -14,7 +14,8 @@ jobs:
             pip install --user --upgrade pip
             pip install --user pytest
             pip install --user flask
-            pip install --user -r requirements.txt 
+            #pip install --user -r requirements.txt 
+            pip install --user -l requirements1.txt
             
       - run:
           name: Run Unit test
