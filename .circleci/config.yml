@@ -15,9 +15,8 @@ jobs:
       - run: 
           name: Run application 
           command: | 
-            sudo python server.py
+            #sudo python server.py
       - run:
-          dependsOn: Run application
           name: Testing
           command: |
             sudo python unit_test.py --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
