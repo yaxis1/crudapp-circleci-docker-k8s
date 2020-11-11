@@ -3,7 +3,6 @@ jobs:
   run_tests:
     docker:
       - image: circleci/python:3.7.4
-    steps:
       - checkout
       - run:
           name: Installing python dependencies 
@@ -16,7 +15,7 @@ jobs:
             sudo pip install -r requirements.txt 
             
       - run:
-          name: Run Unit test
+          name: Run application
           command: |
            #sudo pip install flask==1.1.1
            #sudo pip install bson==0.5.10
