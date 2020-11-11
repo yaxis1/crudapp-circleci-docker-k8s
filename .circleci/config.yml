@@ -21,10 +21,10 @@ jobs:
           #sudo pip install bson==0.5.10
           sudo python server.py
           sudo python api_test.py --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
-    - store_test_results:
-        path: test-reports 
-    - store_artifacts:
-        path: test-reports
+    #- store_test_results:
+    #    path: test-reports 
+    #- store_artifacts:
+    #    path: test-reports
 workflows:
   build_test:
     jobs:
