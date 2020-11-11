@@ -19,6 +19,7 @@ jobs:
       - run:
           name: Run Unit test
           command: |
+           sudo pip install flask==1.1.1
            sudo python server.py
            sudo python api_test.py --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
       - store_test_results:
