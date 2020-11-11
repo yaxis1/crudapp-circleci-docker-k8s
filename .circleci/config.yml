@@ -18,7 +18,8 @@ jobs:
             #sudo python server.py
       - run:
           name: Testing
-          command: |
+          dependencies = ["Run application"]
+            command: |
             sudo python unit_test.py 
 workflows:
   build_test:
