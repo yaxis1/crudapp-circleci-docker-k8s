@@ -10,7 +10,7 @@ jobs:
           command: |
             #echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             python -m venv DevOps
-            cd DevOps\Scripts\activate
+            DevOps\Scripts\activate
             pip install --user --upgrade pip
             pip install --user pytest
             pip install --user -r requirements.txt 
