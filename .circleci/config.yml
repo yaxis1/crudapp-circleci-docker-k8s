@@ -9,8 +9,8 @@ jobs:
           name: Installing python dependencies 
           command: |
             echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
-            conda create -n DevOps python=3.7.4
-            conda activate DevOps
+            python3 -m venv DevOps
+            pip activate DevOps
             pip install --user --upgrade pip
             pip install --user pytest
             pip install --user -r requirements.txt 
