@@ -8,9 +8,9 @@ jobs:
       - run:
           name: Installing python dependencies 
           command: |
-            #echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
+            echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             python3 -m venv DevOps
-            . venv/bin/activate 
+            . DevOps/bin/activate 
             pip install --user --upgrade pip
             pip install --user pytest
             pip install --user -r requirements.txt 
