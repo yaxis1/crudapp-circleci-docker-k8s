@@ -13,7 +13,7 @@ jobs:
             pip install --user --upgrade pip
             pip install --user pytest
             sudo pip install -r requirements.txt 
-            
+    app:        
       - run:
           name: Run application
           command: |
