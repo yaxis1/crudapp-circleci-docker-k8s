@@ -15,11 +15,11 @@ jobs:
       - run: 
           name: Run application 
           command: | 
-            #sudo python server.py
+            sudo python server.py
       - run:
           name: Testing
           dependencies = ["Run application"]
-            command: |
+          command: |
             sudo python unit_test.py 
 workflows:
   build_test:
