@@ -16,7 +16,6 @@ jobs:
           name: Run application 
           command: | 
             sudo python server.py
-
 jobs:
   TESTING:
     steps:
