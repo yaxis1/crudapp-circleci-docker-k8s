@@ -29,4 +29,5 @@ workflows:
   build_test:
     jobs:
       - run_tests 
+      - app
      
