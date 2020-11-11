@@ -1,33 +1,28 @@
 version: 2.1
 jobs:
-  run_tests:
+  Docker_image_initialization:
     docker:
       - image: circleci/python:3.7.4
+    steps:
       - checkout
       - run:
           name: Installing python dependencies 
           command: |
             #echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
-            #python3 -m venv DevOps
-            #. DevOps/bin/activate 
-            pip install --user --upgrade pip
-            pip install --user pytest
+            sudo pip install --upgrade pip
+            sudo pip install pytest
             sudo pip install -r requirements.txt 
-  app:        
-    - run:
-        name: Run application
-        command: |
-          #sudo pip install flask==1.1.1
-          #sudo pip install bson==0.5.10
-          sudo python server.py
-          sudo python api_test.py --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
-    #- store_test_results:
-    #    path: test-reports 
-    #- store_artifacts:
-    #    path: test-reports
+      - run:
+          name: Run application
+          command: |
+            sudo python server.py
+            sudo python pytest.py --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html 
+      - store_test_results:
+          path: test-reports 
+      - store_artifacts:
+          path: test-reports
 workflows:
   build_test:
     jobs:
-      - run_tests 
-      - app
+      - Docker_image_initialization 
      
