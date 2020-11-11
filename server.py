@@ -12,11 +12,14 @@ app.config.from_object("configuration.TestingConfig")
 Swagger(app) 
 
 
+
+
 print(' * Database: ' +  app.config['DB_NAME'])
 print(' * Running on: ' + app.config['RUNNING_ON'])
 print(app.config)
-
-
+print("**********")
+print(json.__version__)
+print(flask.__version__)
 
 #Try/except for connection
 

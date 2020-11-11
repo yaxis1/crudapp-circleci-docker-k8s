@@ -13,7 +13,6 @@ jobs:
             #. DevOps/bin/activate 
             pip install --user --upgrade pip
             pip install --user pytest
-            pip install --user flask
             pip install --user -r requirements.txt 
             
       - run:
