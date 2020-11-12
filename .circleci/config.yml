@@ -17,7 +17,8 @@ jobs:
           dependencies: []
           command: | 
             sudo python server.py
-  - job: TESTING    
+  - job: TESTING
+    steps:  
       - run:
           name: Testing
           dependencies: ["Run application"]
