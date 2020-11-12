@@ -3,7 +3,6 @@ jobs:
   - job: CRUD_APP
     docker:
       - image: circleci/python:3.7.4
-    steps:
       - checkout
       - run:
           name: Installing python dependencies
@@ -18,7 +17,6 @@ jobs:
           command: | 
             sudo python server.py
   - job: TESTING
-    steps:  
       - run:
           name: Testing
           dependencies: ["Run application"]
