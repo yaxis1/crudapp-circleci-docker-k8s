@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  RUN APPLICATION:
+  RUN APP:
     docker:
       - image: circleci/python:3.7.4
     steps:
@@ -10,13 +10,13 @@ jobs:
           command: |
             #echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             sudo pip install --upgrade pip
-            sudo pip install pytest
+            #sudo pip install pytest
             sudo pip install -r requirements.txt 
       - run: 
           name: Run application 
           command: | 
             sudo python server.py
-  TESTING_APP:
+  TEST APP:
     docker:
       - image: circleci/python:3.7.4
     steps:
