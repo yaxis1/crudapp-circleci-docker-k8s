@@ -17,15 +17,15 @@ jobs:
         type: parallel
         steps:
           my_task2a:
-            - run: 
-            name: Run application 
-            command: | 
-              sudo python server.py
+          - run: 
+              name: Run application 
+              command: | 
+                sudo python server.py
           my_task2b:
-            - run:
-            name: Testing
-            command: |
-              sudo python unit_test.py 
+          - run:
+              name: Testing
+              command: |
+                sudo python unit_test.py 
 workflows:
   build_test:
     jobs:
