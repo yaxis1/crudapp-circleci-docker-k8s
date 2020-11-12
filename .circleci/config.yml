@@ -12,18 +12,16 @@ jobs:
             sudo pip install --upgrade pip
             sudo pip install pytest
             sudo pip install -r requirements.txt 
-    runningapp:
-    steps:
       - run: 
           name: Run application 
-          dependencies: []
           command: | 
-            sudo python server.py
+            #sudo python server.py
       - run:
           name: Testing
-          dependencies: ["Run application"]
-          command: |
+            command: |
+            sudo python connec_test.py
             sudo python unit_test.py 
+            sudo python api_test.py
 workflows:
   build_test:
     jobs:
