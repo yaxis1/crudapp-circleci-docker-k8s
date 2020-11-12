@@ -31,6 +31,6 @@ jobs:
 workflows:
   build_test:
     jobs:
-      - CRUD_APP
-      - TESTING_APP 
+      - RUN APP
+      - TEST APP 
      
