@@ -17,10 +17,9 @@ jobs:
           command: | 
             sudo python server.py
   - job: TESTING
-      dependencies: ["Run application"]
       - run:
           name: Testing
-          dependencies: ["Run application"]
+          dependencies: ["CRUD_APP"]
           command: |
             sudo python unit_test.py 
 workflows:
