@@ -7,7 +7,6 @@ jobs:
       - checkout
       - run:
           name: Installing python dependencies
-          dependencies: [] 
           command: |
             #echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             sudo pip install --upgrade pip
@@ -20,7 +19,7 @@ jobs:
             sudo python server.py
       - run:
           name: Testing
-          dependencies = ["Run application"]
+          dependencies: ["Run application"]
           command: |
             sudo python unit_test.py 
 workflows:
