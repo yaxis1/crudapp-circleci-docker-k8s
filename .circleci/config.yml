@@ -6,7 +6,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Installing python dependencies 
+          name: Installing python dependencies
+          dependencies: [] 
           command: |
             #echo 'export PATH=~PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             sudo pip install --upgrade pip
@@ -14,7 +15,7 @@ jobs:
             sudo pip install -r requirements.txt 
       - run: 
           name: Run application 
-          dependencies = []
+          dependencies: []
           command: | 
             sudo python server.py
       - run:
