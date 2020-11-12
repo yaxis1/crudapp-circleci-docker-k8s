@@ -13,7 +13,6 @@ jobs:
             sudo pip install -r requirements.txt 
       - run: 
           name: Run application 
-          dependencies: []
           command: | 
             sudo python server.py
       - run:
