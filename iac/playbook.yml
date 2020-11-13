@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: true
+  tasks:
+      - name: Install language runtime
+        yum: name=
+
+
+      - name: Install and run Mongodb
+        apt:
+          name: mongodb
+          state: present 
+          update_cache: yes
+          service: state = started 
+
+
+
+      - name: Install Git
+        apt:
+          name: git 
+          state: present 
+          update_cache: yes 
+
+
+      - name: Clone CRUD app from github
+
+
+      - name: Health checks on application  
+. . .
