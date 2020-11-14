@@ -23,7 +23,7 @@ jobs:
           name: Testing
           command: |
             sudo pip install --upgrade pip
-            sudo pip install -r requirements.txt 
+            sudo pip install -r ./src/requirements.txt 
             sudo python ./test/connec_test.py
             sudo python ./test/unit_test.py 
             sudo python ./test/api_test.py
