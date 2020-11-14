@@ -13,7 +13,7 @@ jobs:
       - run: 
           name: Run application 
           command: | 
-            sudo python server.py
+            sudo python ./src/server.py
   TEST APP:
     docker:
       - image: circleci/python:3.7.4
@@ -24,9 +24,9 @@ jobs:
           command: |
             sudo pip install --upgrade pip
             sudo pip install -r requirements.txt 
-            sudo python connec_test.py
-            sudo python unit_test.py 
-            sudo python api_test.py
+            sudo python ./test/connec_test.py
+            sudo python ./test/unit_test.py 
+            sudo python ./test/api_test.py
 workflows:
   Build and test:
     jobs:
