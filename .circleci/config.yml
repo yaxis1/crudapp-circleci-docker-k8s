@@ -9,7 +9,7 @@ jobs:
           name: Installing python dependencies 
           command: |
             sudo pip install --upgrade pip
-            sudo pip install -r requirements.txt 
+            sudo pip install -r /src/requirements.txt 
       - run: 
           name: Run application 
           command: | 
