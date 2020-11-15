@@ -7,7 +7,7 @@ spec:
     app: crudapp
   ports:
   - protocol: "TCP"
-    port: 6000
+    port: 80
     targetPort: 5000
   type: LoadBalancer
 
