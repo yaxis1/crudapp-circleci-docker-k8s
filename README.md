@@ -42,7 +42,7 @@ Inside yml file:
  
  Once the docker image is created, it can be pushed to docker hub on the cloud. 
  
-- Docker orchestration: 
+- Docker orchestration: <br />
  We can manage the above created docker images using "Kubernetes", It automates application deployment, scaling, and management. Everthing is orchestrated inside a yaml file. 
  For our application, in order to create a tcp service we open port 80 and bind it with docker port 5000. Then we can deploy the app on multiple instances thereby autoscaling the application if required.  
  
