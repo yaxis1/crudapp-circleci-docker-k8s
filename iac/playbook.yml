@@ -4,11 +4,11 @@
   
   tasks: 
 
-  # - name: Install Python
-  #        apt:
-  #             name: python
-  #             state: latest
-  #             update_cache: yes
+        - name: Install Python
+          apt:
+                name: python
+                state: latest
+                update_cache: yes
         
 
         - name: Install and run mongodb
@@ -42,6 +42,12 @@
           pip: 
              name: virtualenv
              state: latest
+
+        - name: Install and run git
+          apt: 
+                name: git
+                state: latest
+                update_cache: yes 
         
         - name: Install requirements
           pip: 
@@ -49,14 +55,6 @@
               virtualenv_python=python3.4
               requirements=/home/saif/Dev-Ops/src/requirements.txt
  
-
-
-        - name: Install and run git
-          apt: 
-                name: git
-                state: latest
-                update_cache: yes 
-
         - name: Copy crudapp  
           copy: src=/home/saif/Dev-Ops/src/ dest=/home/saif/crudapp/appenv
 
