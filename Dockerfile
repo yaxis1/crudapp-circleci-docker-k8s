@@ -27,7 +27,7 @@ RUN pip3 --no-cache-dir install -r requirements.txt
 #Opening port to enable api interaction 
 EXPOSE 80
 
-# 
+# Running application
 ENTRYPOINT ["python3"]
 CMD ["server.py"]  
  
