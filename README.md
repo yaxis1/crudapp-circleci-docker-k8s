@@ -1,5 +1,5 @@
 # Dev-Ops
- Development Operations for CRUD app
+ Development and Operations for CRUD app
 
 This project illustrates the collaboration of development and operational stages of application development. 
 
