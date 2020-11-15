@@ -9,4 +9,4 @@ services:
         depends_on:
             - mongodb
     mongodb:
-        image: mongodb
+        image: mongo
