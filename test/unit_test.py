@@ -19,15 +19,15 @@ class myunitest(unittest.TestCase):
 
     def test_update(self):
         r = requests.get(myunitest.upd_url) 
-        self.assertEqual(r.status_code, 405) #200
+        self.assertEqual(r.status_code, 405) 
 
     def test_create(self):
         r = requests.get(myunitest.pos_url)
-        self.assertEqual(r.status_code, 500) #200
+        self.assertEqual(r.status_code, 500) 
 
     def test_delete(self):
         r = requests.get(myunitest.del_url)
-        self.assertEqual(r.status_code, 405) #200
+        self.assertEqual(r.status_code, 405) 
 
 
 if __name__ == '__main__':

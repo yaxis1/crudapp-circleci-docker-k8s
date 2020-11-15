@@ -7,14 +7,16 @@ import json
 import pytest
 
 app = Flask(__name__)
+
 app.config.from_object("configuration.TestingConfig")
 Swagger(app) 
 
+#Printing our db name from configuration.py
+
 print(' * Database: ' +  app.config['DB_NAME'])
 print(' * Running on: ' + app.config['RUNNING_ON'])
-print(app.config)
 
-#Try/except for connection
+
 
 ##################################
 #DELETE
