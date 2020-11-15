@@ -1,29 +1,66 @@
 ---
 - hosts: all
-  become: true
-  tasks:
-      - name: Install language runtime
-        yum: name=
+  become: yes 
+  
+  tasks: 
+
+  # - name: Install Python
+  #        apt:
+  #             name: python
+  #             state: latest
+  #             update_cache: yes
+        
+
+        - name: Install and run mongodb
+          apt: 
+                name: mongodb
+                state: latest 
+                update_cache: yes
+                
+        
+
+        - name: Download pip installer
+          get_url:
+                  url: https://bootstrap.pypa.io/get-pip.py
+                  dest: /tmp/get-pip.py
+ 
 
 
-      - name: Install and run Mongodb
-        apt:
-          name: mongodb
-          state: present 
-          update_cache: yes
-          service: state = started 
+        - name: Install pip
+          shell: |
+              /usr/bin/python /tmp/get-pip.py
+                          
+         
+        - name: Create app folder
+          file:
+             name: /home/saif/crudapp
+             state: directory
+             recurse: yes
 
 
+        - name: Install virtualenv module
+          pip: 
+             name: virtualenv
+             state: latest
+        
+        - name: Install requirements
+          pip: 
+              virtualenv="/home/saif/crudapp/appenv"
+              virtualenv_python=python3.4
+              requirements=/home/saif/Dev-Ops/src/requirements.txt
+ 
 
-      - name: Install Git
-        apt:
-          name: git 
-          state: present 
-          update_cache: yes 
 
+        - name: Install and run git
+          apt: 
+                name: git
+                state: latest
+                update_cache: yes 
 
-      - name: Clone CRUD app from github
+        - name: Copy crudapp  
+          copy: src=/home/saif/Dev-Ops/src/ dest=/home/saif/crudapp/appenv
 
+        - name: run crudapp
+          command: python3 /home/saif/crudapp/appenv/server.py
+... 
 
-      - name: Health checks on application  
-. . .
