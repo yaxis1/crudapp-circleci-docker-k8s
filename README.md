@@ -36,6 +36,32 @@ Inside yml file:
  Ansible is one of the software provisioning, configuration management, and application-deployment tool. It is in yaml format and has inbuilt keywords for installation modules. In here, first we install python, mongodb, pip. Then create a virtual environment for our app. Install git and move src file to the virtual environment. Install dependencies from the previously freezed file "requirements.txt". Then, run the app using command module of ansible. We can also run tests using same module but it has to be a new job. 
 
 - Building Docker image of application
+ Initiate a docker using Dockerfile. On docker, first install python and pip then create a working directory for our source code. Then copy source code from local machine to docker working folder. Using the pip module install requirements.txt that was previously freezed. 
+ For this docker to communicate with the internet, we expose port 80. Then run app using entrypoint as python3 and command as server.py - api. 
+ Inside docker compose, build docker image on port 80 and install database that is required for this application. 
+ 
+ Once the docker image is created, it can be pushed to docker hub on the cloud. 
+ 
+- Docker orchestration: 
+ We can manage the above created docker images using "Kubernetes", It automates application deployment, scaling, and management. Everthing is orchestrated inside a yaml file. 
+ For our application, in order to create a tcp service we open port 80 and bind it with docker port 5000. Then we can deploy the app on multiple instances thereby autoscaling the application if required.  
+ 
+- Tools used: 
+
+CircleCI
+Dockerhub: https://hub.docker.com/r/saifverc/mycrudapp
+AWS EC2 instances 
+Kubernetes dashboard 
+Mongodb community compass, Postman and 
+Github! 
+
+- Author: 
+Saifuddin Mohammad
+DSTI Student – Data Engineering for Artificial Intelligence – S20 Cohort
+Data ScienceTech Institute
+Paris Campus 4 Rue de la Collégiale, 75005 Paris 
+saifuddin.mohammad@edu.dsti.institute
+
  
 
 
