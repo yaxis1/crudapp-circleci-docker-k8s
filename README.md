@@ -1,5 +1,5 @@
 # Dev-Ops
- Development and Operations for CRUD app
+ Development and Operations for CRUD app <br />
 
 This project illustrates the collaboration of development and operational stages of application development. 
 
@@ -25,17 +25,17 @@ Once the account is created on the website and github is linked, we are ready to
 
 A .circleci folder is required to integrate this with the circleci web interface and build the pipeline.
 
-Inside yml file:
+Inside yml file: <br />
  For first job, we run the application on docker after installing dependencies that was previously freezed from local environment.
  For second job, we run test files after installing dependencies. 
  The workflow runs these "Run app" and "test app" jobs parallely to reflect immediate changes in the workflow. 
  
-- Infrastructure as Code
+- Infrastructure as Code: <br />
  Vagrant is used for building and maintaining portable virtual software development environments like virtualbox and dockers.
  After creating Vagrant file - we vim it to change it according to our application. Here we can change configuration, define the virtualbox name, attributes, also attach an ansible playbook to deploy applications.
  Ansible is one of the software provisioning, configuration management, and application-deployment tool. It is in yaml format and has inbuilt keywords for installation modules. In here, first we install python, mongodb, pip. Then create a virtual environment for our app. Install git and move src file to the virtual environment. Install dependencies from the previously freezed file "requirements.txt". Then, run the app using command module of ansible. We can also run tests using same module but it has to be a new job. 
 
-- Building Docker image of application
+- Building Docker image of application: <br />
  Initiate a docker using Dockerfile. On docker, first install python and pip then create a working directory for our source code. Then copy source code from local machine to docker working folder. Using the pip module install requirements.txt that was previously freezed. 
  For this docker to communicate with the internet, we expose port 80. Then run app using entrypoint as python3 and command as server.py - api. 
  Inside docker compose, build docker image on port 80 and install database that is required for this application. 
@@ -56,11 +56,11 @@ Mongodb community compass, Postman and <br />
 Github! 
 
 - Author: 
-Saifuddin Mohammad
-DSTI Student – Data Engineering for Artificial Intelligence – S20 Cohort
-Data ScienceTech Institute
-Paris Campus 4 Rue de la Collégiale, 75005 Paris 
-saifuddin.mohammad@edu.dsti.institute
+Saifuddin Mohammad <br />
+DSTI Student – Data Engineering for Artificial Intelligence – S20 Cohort <br />
+Data ScienceTech Institute <br />
+Paris Campus 4 Rue de la Collégiale, 75005 Paris <br /> 
+saifuddin.mohammad@edu.dsti.institute <br />
 
  
 
