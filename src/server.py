@@ -18,8 +18,8 @@ print(' * Running on: ' + app.config['RUNNING_ON'])
 
 #Connecting to mongodb database
 mongo = pymongo.MongoClient(host='localhost', port = 27017, serverSelectionTimeoutMS = 1000)
-    db = mongo.company
-    mongo.server_info()
+db = mongo.company
+mongo.server_info()
 
 
 
