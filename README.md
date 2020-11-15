@@ -48,11 +48,11 @@ Inside yml file:
  
 - Tools used: 
 
-CircleCI
-Dockerhub: https://hub.docker.com/r/saifverc/mycrudapp
-AWS EC2 instances 
-Kubernetes dashboard 
-Mongodb community compass, Postman and 
+CircleCI <br />
+Dockerhub: https://hub.docker.com/r/saifverc/mycrudapp <br />
+AWS EC2 instances <br />
+Kubernetes dashboard <br />
+Mongodb community compass, Postman and <br /> 
 Github! 
 
 - Author: 
